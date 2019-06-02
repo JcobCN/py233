@@ -1,0 +1,6 @@
+venv_home/
+venv/
+build/
+.vscode/
+.idea/
+__pycache__/
