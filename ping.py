@@ -33,6 +33,7 @@ def requsetPing(data_type,
     #>表示大端格式， 网络用大端格式
     icmp_packet = struct.pack('>BBHHH32s', data_type, data_code, data_checksum, data_ID,
                               data_sequence, data_content)
+    print(icmp_packet)
     icmp_checksum = checksum(icmp_packet)#获取校验和
     icmp_packet = struct.pack('>BBHHH32s', data_type, data_code, data_checksum, data_ID,
                               data_sequence, data_content)
