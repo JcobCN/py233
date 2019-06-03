@@ -63,4 +63,5 @@ if __name__ == '__main__':
     if(len(sys.argv) == 2):
         get2(sys.argv[1])
     else:
-        get2('6dbkO9Mx49AR')
+        while True:
+            get2('6dbkO9Mx49AR')

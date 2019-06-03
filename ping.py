@@ -83,8 +83,8 @@ def ping(host):
     data_checksum = 0 # 校验和 16bit
     data_ID = 0 #identifier 16bit
     data_sequence = 1 #序列号 16bit
-    data_content = b'fxckavafxckavafxckavafxckavaqnmb' # 填充内容(选) 32bit~更多
-    # data_content = b'abcdefghijklmnopqrstuvwabcdefghi'
+    # data_content = b'fxckavafxckavafxckavafxckavaqnmb' # 填充内容(选) 32bit~更多
+    data_content = b'abcdefghijklmnopqrstuvwabcdefghi'
 
     icmp_packet = requsetPing(data_type, #得到ICMP封包
                               data_code, data_checksum,
