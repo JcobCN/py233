@@ -57,11 +57,36 @@ def get2(randStr:str):
     passwd = respObj.text.split('|')[1]
     print('passwd:\n'+ passwd)
 
+def getBaiduPic():
+    headers = {
+        'Host': 'www.baidu.com',
+        'Connection': 'Close',
+        'Accept': '*/*',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+        'Accept-Language': 'zh-CN,zh;q=0.9',
+    }
+
+    url = 'https://www.baidu.com/img/bd_logo1.png?qua=high'
+    respObj = requests.get(url, headers)
+    print(respObj.status_code)
+
+
+    picFile = open('baidu.png', 'wb')
+    for chunk in respObj.iter_content(100000):
+        picFile.write(chunk)
+
+    picFile.close()
+
+
+
+    print(respObj.text)
+
 
 
 if __name__ == '__main__':
     if(len(sys.argv) == 2):
         get2(sys.argv[1])
     else:
-        while True:
-            get2('6dbkO9Mx49AR')
+        # while True:
+        #     get2('6dbkO9Mx49AR')
+        getBaiduPic()
